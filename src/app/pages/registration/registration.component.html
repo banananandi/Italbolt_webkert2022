@@ -1,0 +1,31 @@
+<body class="mat-app-background ">
+    <div class="regFormContainer">
+    <mat-card>
+        <mat-card-header><mat-card-title><h1>Regisztráció</h1></mat-card-title></mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <mat-form-field><mat-label  for="email">E-mail:</mat-label><input matInput type="email" formControlName="email"/></mat-form-field><br>
+            <mat-form-field><mat-label for="pw">Jelszó:</mat-label><input matInput [type]="hide ? 'password' : 'text'" formControlName="pw"/>
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field><br>
+            <mat-form-field><mat-label for="repw">Jelszó megerősítése</mat-label><input matInput [type]="hide ? 'password' : 'text'" formControlName="repw"/>
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field><br>
+            <div formGroupName="name" class="subForm">
+            <mat-form-field><mat-label for="lname">Vezetéknév</mat-label><input matInput type="text" formControlName="lname"/></mat-form-field><br>
+            <mat-form-field><mat-label for="fname">Keresztknév</mat-label><input matInput type="text" formControlName="fname"/></mat-form-field><br>
+            </div>
+            <mat-form-field><mat-label for="birth">Szül.idő</mat-label>
+            
+                <input matInput [matDatepicker]="picker"  formControlName="birth">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            
+            
+            </mat-form-field><br>
+            <button mat-raised-button  color="accent" type="submit">Regisztráció</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+    </div>
+</body>

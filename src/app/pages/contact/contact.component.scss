@@ -1,0 +1,19 @@
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: auto;
+}
+
+.regFormContainer {
+    
+    align-items: center;
+    padding-top: 5%;
+}
+mat-card-content{
+    text-align: left;
+}
+mat-icon{
+    margin-right: 5px;
+}

@@ -1,0 +1,24 @@
+<body class="mat-app-background ">
+    <a class="loading-indicator" *ngIf="loading"><mat-spinner ></mat-spinner></a>
+        <div class="ItemContainer">
+            <div  fxLayout="row wrap" fxLayoutGap="10px grid" fxLayoutAlign="center">
+                <div class ="card" fxFlex="15%" fxFlex.xs="47%" fxFlex.sm="28%" *ngFor="let ital of ItalObject; let i = index">
+            <mat-card>
+                <mat-card-header><mat-card-title class="title">{{ItalContent[i]?.nev}}</mat-card-title> 
+                                <mat-card-subtitle>{{ItalContent[i]?.alc}}% Alc.</mat-card-subtitle>
+                </mat-card-header>
+                
+                <mat-card-content>
+                    <img [src]="loadedImage[i]">
+                </mat-card-content>
+                <mat-card-actions>
+                    <p class="price" color="primary">{{ItalContent[i]?.price}} Ft</p>
+                    <div class="button"><button mat-raised-button  color="accent" type="submit"><mat-icon>shopping_bag</mat-icon>Kosárba</button></div>
+                </mat-card-actions>
+            </mat-card>
+  
+        </div>
+            </div>
+        </div>
+
+</body>

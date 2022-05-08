@@ -1,0 +1,47 @@
+
+<mat-sidenav-container fullscreen> 
+    <mat-sidenav id="sidenav" #sidenav>
+        <app-navbar (selectedPage)="changePage($event)" [currentPage]="page" (onCloseSidenav)="onClose($event, sidenav)" [loggedInUser]="loggedInUser" (onLogout)="logout()"></app-navbar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar id="menu" color="primary" >
+
+            <button mat-icon-button fxHide.gt-xs (click)="MenuToggle(sidenav)">
+                <mat-icon>menu</mat-icon>
+            </button>
+           <img id="logo" src="assets/logo_transparent.png" title="Főoldal" routerLink="/home">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px" fxHide.lt-sm>
+                <a *ngIf="!loggedInUser" routerLink="/login">Bejelentkezés</a>
+                <a *ngIf="!loggedInUser" routerLink="/registration">Regisztráció</a>
+                <a routerLink="/webshop" *ngIf="loggedInUser">Webshop</a>
+                <a routerLink="/contact">Kapcsolat</a>
+                <a *ngIf="loggedInUser" (click)="logout()" routerLink="/login">Kijelentkezés</a>
+            </div>
+            <div fxFlex fxLayoutAlign="flex-end center" fxLayoutGap="5px" [style.margin-right]="'10px'">
+
+                <mat-icon>light_mode</mat-icon>
+                <mat-slide-toggle [formControl]="togglecontrol">
+                </mat-slide-toggle>
+                <mat-icon>dark_mode</mat-icon>
+
+
+            </div>
+        </mat-toolbar>
+        <body class="mat-app-background ">
+            
+            <router-outlet></router-outlet>
+        </body>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+
+
+
+
+
+<!-- <app-main></app-main> -->
+
+<!-- <app-registration></app-registration> -->

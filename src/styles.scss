@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@import "@angular/material/theming";
+@include mat.core();
+
+// Define a light theme
+$app-primary: mat.define-palette($mat-amber, 400);
+$app-accent: mat.define-palette($mat-deep-orange);
+$app-theme: mat.define-light-theme((color: (primary: $app-primary,
+        accent: $app-accent,
+      )));
+
+// Define a dark theme
+$dark-primary: mat.define-palette($mat-grey, 300);
+$dark-accent: mat.define-palette($mat-blue-gray-palette);
+$dark-theme: mat.define-dark-theme((color: (primary: $dark-primary,
+        accent: $dark-accent,
+      )));
+
+// Apply the light theme by default
+@include mat.all-component-themes($app-theme);
+
+
+// Apply the dark theme only when the `.dark-theme` CSS class is applied
+// to an ancestor element of the components (such as `body`).
+.darkTheme {
+  @include mat.all-component-themes($dark-theme);
+
+}
+
+// Apply the dark theme only when the `.dark-theme` CSS class is applied
+// to an ancestor element of the components (such as `body`).
+
+
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.loading-indicator {
+  position: fixed;
+  z-index: 999;
+  height: 1em;
+  width: 1em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.loading-indicator::before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.3);
+}

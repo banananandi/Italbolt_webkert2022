@@ -1,0 +1,14 @@
+<body class="mat-app-background ">
+    <div class="regFormContainer">
+    <mat-card>
+        <mat-card-header><mat-card-title><h1>Bejelentkezés</h1></mat-card-title></mat-card-header>
+        <mat-card-content>
+            <mat-form-field><mat-label  for="email">E-mail:</mat-label><input matInput type="text"  [formControl]="email"/></mat-form-field><br>
+            <mat-form-field><mat-label  for="pw">Jelszó:</mat-label><input matInput [type]="hide ? 'password' : 'text'"  [formControl]="pw"/>
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field><br>
+            <button mat-raised-button  color="accent" type="submit" (click)="login()">Bejelentkezés</button>
+        </mat-card-content>
+    </mat-card>
+    </div>
+</body>

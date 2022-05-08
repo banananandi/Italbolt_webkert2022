@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "italbolt-d4862": {
+      "hosting": {
+        "Italbolt": [
+          "italbolt-d4862"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "italbolt-d4862"
+  }
+}

@@ -1,0 +1,49 @@
+.ItemContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: auto;
+    //border: 2px solid black;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+
+}
+.card{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 1%;
+}
+
+mat-card{
+    
+    height: 300px;
+    width: 180px;
+
+}
+
+.title{
+    text-align: center;
+}
+
+.button{
+    position: absolute;
+    bottom: 10px;
+    left: 25%;
+
+}
+img{
+    max-width:220px;
+    max-height:180px;
+    position: relative;
+    bottom: 15px;
+
+}
+.price{
+    font-style: italic;
+    font-size: 16px;
+    position: absolute;
+    bottom: 40px;
+    left: 40%;
+}
+
